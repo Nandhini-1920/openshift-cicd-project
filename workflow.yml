@@ -8,10 +8,11 @@ on:
     branches: [main]
 
 jobs:
-  lint-and-test:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -24,7 +25,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install flake8 nose
 
-      - name: Lint with flake8
+      - name: Initialize containers
+        run: echo "Environment initialized"
+
+      - name: Linting with flake8
         run: flake8 .
 
       - name: Run unit tests with nose
