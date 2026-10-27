@@ -1,19 +1,22 @@
-# OpenShift CI/CD Pipeline Project
+# ci-cd-final-project
 
 ## Project Description
-This project demonstrates a Continuous Integration and Continuous Deployment (CI/CD) pipeline using GitHub Actions, Tekton, and OpenShift. It automates code linting, unit testing, image building, and application deployment.
+
+The **ci-cd-final-project** demonstrates a Continuous Integration and Continuous Deployment (CI/CD) workflow using GitHub Actions, Tekton Pipelines, and Red Hat OpenShift. The project automates code linting, unit testing, container image building, and application deployment.
 
 ## Objectives
+
 - Automate code quality checks using Flake8.
 - Execute unit tests using Nose.
+- Configure automated workflows using GitHub Actions.
 - Define pipeline tasks using Tekton.
 - Build container images using Buildah.
 - Deploy the application on OpenShift.
-- Verify application availability on port 8000.
+- Verify application startup and availability on port 8000.
 
 ## Technologies Used
-- GitHub
-- GitHub Actions
+
+- GitHub and GitHub Actions
 - Python
 - Flake8
 - Nose
@@ -21,12 +24,15 @@ This project demonstrates a Continuous Integration and Continuous Deployment (CI
 - Buildah
 - Red Hat OpenShift
 - YAML
+- Docker and container technology
 
 ## Project Structure
+
 ```text
-openshift-cicd-project/
+ci-cd-final-project/
 ├── README.md
 ├── oc-pipeline-application-logs.txt
+├── cicd-github-validate
 ├── .github/
 │   └── workflows/
 │       └── workflow.yml
@@ -34,32 +40,20 @@ openshift-cicd-project/
     └── tasks.yml
 ```
 
-## Pipeline Steps
-1. **Cleanup:** Prepares the pipeline workspace.
-2. **Git Clone:** Retrieves the source code from the repository.
-3. **Lint:** Checks Python code quality using Flake8.
-4. **Unit Tests:** Runs automated tests using Nose.
+## CI/CD Pipeline Steps
+
+1. **Cleanup:** Prepares the workspace for pipeline execution.
+2. **Git Clone:** Retrieves the project source code from the GitHub repository.
+3. **Linting:** Checks Python source code quality using Flake8.
+4. **Unit Testing:** Executes automated tests using Nose.
 5. **Buildah:** Builds the application container image.
-6. **Deploy:** Deploys the application to OpenShift.
+6. **Deploy:** Deploys the application to the OpenShift environment.
 
-## Application Details
-The application is configured to listen on port `8000`. Application logs can be used to verify startup and service availability.
+## GitHub Actions Workflow
 
-Expected log message:
-`SERVICERUNNING`
+The GitHub Actions workflow is defined in `.github/workflows/workflow.yml`.
 
-## Execution
-1. Push the project files to a public GitHub repository.
-2. Run the GitHub Actions workflow.
-3. Configure Tekton tasks and the pipeline in OpenShift.
-4. Execute the pipeline and inspect each task's status.
-5. Verify the deployed application and its logs.
-
-## Expected Outcome
-The pipeline should complete linting, unit testing, image building, and deployment successfully. The deployed application should become accessible on its configured port.
-
-## Author
-Student Project
-
-## Conclusion
-This project demonstrates how CI/CD automation can improve code quality, testing consistency, container image creation, and application deployment using GitHub and OpenShift.
+The workflow is intended to:
+- Check out the source code.
+- Set up the required runtime environment.
+- Install project
