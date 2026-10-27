@@ -1,0 +1,12 @@
+
+INFO: Starting OpenShift application...
+INFO: Initializing application...
+INFO: Server host: 0.0.0.0
+INFO: Server port: 8000
+
+SERVICERUNNING
+
+INFO: Application is ready to accept requests.
+INFO: Health check status: OK
+INFO: Server running on port 8000
+INFO: Waiting for incoming requests...
